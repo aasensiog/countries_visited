@@ -9,9 +9,9 @@ var doMap = function(countries) {
   $.map(countries, function(el,i) {
     return x.push([el]);
   });
-  var visited = x.length;
+  var visited = x.length - 1;
   var total = availableCountries.length;
-  $('#percent').html('<p>'+visited+'/'+total+' '+visited/total+'%</p>');
+  $('#percent').html('<p>'+visited+'/'+total+' '+Math.floor((visited/total)*100)+'%</p>');
   return x;
 };
 
