@@ -58,6 +58,20 @@ $( document ).ready(function() {
       addAndUpdateChart(ui.item.value);
     }
   });
+
+  $('#list').click(function() {
+    var aux = countriesVisited;
+    aux.splice(0,1);
+    var names = [];
+    for (var i = 0; i < aux.length; i++) {
+      for (var j = 0; j < availableCountries.length; j++) {
+        if (aux[i] == availableCountries[j].value) {
+          names.push(availableCountries[j].label);
+        }
+      }
+    }
+    alert(names);
+  });
 });
 
 
