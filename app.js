@@ -11,7 +11,7 @@ var doMap = function(countries) {
   });
   var visited = x.length - 1;
   var total = availableCountries.length;
-  $('#percent').html('<p>'+visited+'/'+total+' '+Math.floor((visited/total)*100)+'%</p>');
+  $('#percent').html('<h3>'+visited+'/'+total+' '+Math.floor((visited/total)*100)+'%</h3>');
   return x;
 };
 

@@ -3,9 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title>My world</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <link href='http://fonts.googleapis.com/css?family=Paprika' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/960.css" media="all">
+    <link rel="stylesheet" href="css/960_12_col.css" media="all">
+    <link rel="stylesheet" href="css/960_16_col.css" media="all">
+    <link rel="stylesheet" href="css/960_24_col.css" media="all">
+    <link rel="stylesheet" href="css/reset.css" media="all">
+    <link rel="stylesheet" href="css/text.css" media="all">
+
+
     <link rel="stylesheet" type="text/css" href="style.css">
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src='https://www.google.com/jsapi'></script>
@@ -17,14 +28,23 @@
     </script>
   </head>
   <body>
-    <h3>Where have you been?</h3>
-    <div class="ui-widget">
-      <label for="tags"></label>
-      <input id="tags" />
-    </div>
-    <div id='percent'></div>
-    <button id='list'>List your countries</button>
-    <div id="chart_div" style="height: 90%;"></div>
+    <div class='container_16' id='container'>
+      <div class='grid_16'>
+        <h3>Where have you been?</h3>
+      </div>
+      <div class='grid_8'>
+        <div class="ui-widget">
+        <input id="tags" />
+      </div>
+      </div>
+      <div class='grid_4'>
+        <div id='percent'></div>
+      </div>
+      <div class='grid_4'>
+        <button id='list'>List your countries</button>
+      </div>
 
+      <div class='grid_16' id="chart_div" style="height: 75%;"></div>
+    </div>
   </body>
 </html>
