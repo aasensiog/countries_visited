@@ -9,7 +9,7 @@ var doMap = function(countries) {
   $.map(countries, function(el,i) {
     return x.push([el]);
   });
-  var visited = x.length - 1;
+  var visited = Math.max(x.length - 1, 0);
   var total = availableCountries.length;
   $('#percent').html('<p>'+visited+'/'+total+' '+Math.floor((visited/total)*100)+'%</p>');
   return x;
@@ -59,6 +59,12 @@ $( document ).ready(function() {
     }
   });
 
+  $('#clear').click(function() {
+    countriesVisited = ['Country'];
+    chart.draw(google.visualization.arrayToDataTable(doMap(countriesVisited)), options);
+    saveOnLocalStorage(countriesVisited);
+  });
+
   $('#list').click(function() {
     var aux = countriesVisited;
     aux.splice(0,1);
@@ -70,7 +76,11 @@ $( document ).ready(function() {
         }
       }
     }
-    alert(names);
+    if (names.length > 0) {
+      alert(names);
+    } else {
+      alert('Any country visited yet, do not you live anywhere?');
+    }
   });
 });
 
